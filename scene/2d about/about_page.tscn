@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/image/About.png" type="Texture" id=1]
+[ext_resource path="res://script/2d about/about_page.gd" type="Script" id=2]
+
+[node name="about_page" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 960.0
+margin_bottom = 540.0
+texture = ExtResource( 1 )

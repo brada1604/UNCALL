@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://script/3d player/Player_1.gd" type="Script" id=1]
+[ext_resource path="res://assets/player/Skin-Biliard/8pool2.glb" type="PackedScene" id=2]
+[ext_resource path="res://assets/player/Skin-World/WORLD3.glb" type="PackedScene" id=3]
+[ext_resource path="res://assets/player/Skin-Golf/Golf.glb" type="PackedScene" id=4]
+[ext_resource path="res://assets/player/Skin-Voly/Voly.glb" type="PackedScene" id=5]
+[ext_resource path="res://player/Ball.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/player/Skin-Bulan/BULAN.glb" type="PackedScene" id=7]
+[ext_resource path="res://assets/player/Skin-Bolasepak/Bolasepakskin.glb" type="PackedScene" id=8]
+
+[node name="Player_1_golf" instance=ExtResource( 6 )]
+script = ExtResource( 1 )
+
+[node name="pixar-ball" parent="." index="1"]
+visible = false
+
+[node name="WORLD3" parent="." index="2" instance=ExtResource( 3 )]
+visible = false
+
+[node name="Voly2" parent="." index="3" instance=ExtResource( 5 )]
+transform = Transform( 0.561, 0, 0, 0, 0.561, 0, 0, 0, 0.561, 0, 0, 0 )
+visible = false
+
+[node name="Golf" parent="." index="4" instance=ExtResource( 4 )]
+
+[node name="BULAN" parent="." index="5" instance=ExtResource( 7 )]
+visible = false
+
+[node name="Bolasepakskin" parent="." index="6" instance=ExtResource( 8 )]
+transform = Transform( 1.171, 0, 0, 0, 1.171, 0, 0, 0, 1.171, 0, 0, 0 )
+visible = false
+
+[node name="8pool2" parent="." index="7" instance=ExtResource( 2 )]
+visible = false

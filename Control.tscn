@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://countdowntest.gd" type="Script" id=1]
+[ext_resource path="res://assets/font/Atma/Atma-Bold.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 2 )
+
+[node name="Timer" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+minutes = 1
+
+[node name="min" type="RichTextLabel" parent="."]
+margin_right = 51.0
+margin_bottom = 40.0
+custom_fonts/normal_font = SubResource( 4 )
+text = "00"
+
+[node name="sec" type="RichTextLabel" parent="."]
+margin_left = 56.0
+margin_right = 109.0
+margin_bottom = 40.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "00"
+
+[node name="dsec" type="RichTextLabel" parent="."]
+margin_left = 112.0
+margin_right = 163.0
+margin_bottom = 40.0
+custom_fonts/normal_font = SubResource( 3 )
+text = "00"
+
+[node name="Timer" type="Timer" parent="."]
+process_mode = 0
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

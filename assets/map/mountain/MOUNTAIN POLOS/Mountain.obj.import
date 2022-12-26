@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Mountain.obj-1725dcc34b0ce008d4c096349427ee15.mesh"
+
+[deps]
+
+files=[ "res://.import/Mountain.obj-1725dcc34b0ce008d4c096349427ee15.mesh" ]
+
+source_file="res://assets/map/mountain/MOUNTAIN POLOS/Mountain.obj"
+dest_files=[ "res://.import/Mountain.obj-1725dcc34b0ce008d4c096349427ee15.mesh", "res://.import/Mountain.obj-1725dcc34b0ce008d4c096349427ee15.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

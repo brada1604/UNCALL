@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/models/Mobil.glb" type="PackedScene" id=1]
+[ext_resource path="res://test_path.gd" type="Script" id=2]
+
+[sub_resource type="Curve3D" id=1]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 0.913013, 1.14407, -0.126724, 0, 0, 0, 0, 0, 0, 63.5047, -0.121531, 1.74683, 0, 0, 0, 0, 0, 0, 192.781, -0.274239, 0.43905 ),
+"tilts": PoolRealArray( 0, 0, 0 )
+}
+
+[node name="Path" type="Path"]
+curve = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="PathFollow" type="PathFollow" parent="."]
+transform = Transform( -0.0249829, 0.434208, -0.900466, -0.424191, 0.811032, 0.402851, 0.905228, 0.392034, 0.163925, 0.913013, 1.14407, -0.126724 )
+
+[node name="Mobil" parent="PathFollow" instance=ExtResource( 1 )]
+transform = Transform( 8.6108, -5.06733, -0.41976, 4.26286, 7.64441, -4.83643, 2.77166, 3.98563, 8.74259, 1.58616, 0.686922, 0.287232 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 90, 20, 100 )

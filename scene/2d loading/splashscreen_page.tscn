@@ -1,0 +1,103 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/video/Splash Screen.webm" type="VideoStream" id=1]
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends Node2D
+var video_player
+var video 
+
+func _ready():
+	video_player = get_node(\"VideoPlayer\")
+	video = preload(\"res://assets/video/Splash Screen.webm\")
+	video_player.set_stream( video )
+	set_process( true )
+	$AnimationPlayer.play(\"FadeIn\")
+	yield(get_tree().create_timer(6), \"timeout\")
+	$AnimationPlayer.play(\"FadeOut\")
+	yield(get_tree().create_timer(3), \"timeout\")
+	get_tree().change_scene(\"res://scene/2d home/home_page.tscn\")
+
+func _process(delta):
+	if not video_player.is_playing(): video_player.play()
+"
+
+[sub_resource type="Animation" id=1]
+resource_name = "FadeIn"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "FadeOut"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="splashscreen_page" type="Node2D"]
+script = SubResource( 4 )
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+margin_right = 961.0
+margin_bottom = 541.0
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 432.0
+margin_top = 225.0
+margin_right = 528.0
+margin_bottom = 265.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 96.0
+margin_bottom = 14.0
+text = "loading page ..."
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -15.0
+margin_top = -9.0
+margin_right = 977.0
+margin_bottom = 554.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FadeIn = SubResource( 1 )
+anims/FadeOut = SubResource( 3 )
+anims/RESET = SubResource( 2 )

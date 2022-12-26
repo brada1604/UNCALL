@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/test lagi.obj-c5f8668e8eeec4af6a48bf149dcf8a6b.mesh"
+
+[deps]
+
+files=[ "res://.import/test lagi.obj-c5f8668e8eeec4af6a48bf149dcf8a6b.mesh" ]
+
+source_file="res://assets/models/test lagi.obj"
+dest_files=[ "res://.import/test lagi.obj-c5f8668e8eeec4af6a48bf149dcf8a6b.mesh", "res://.import/test lagi.obj-c5f8668e8eeec4af6a48bf149dcf8a6b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
